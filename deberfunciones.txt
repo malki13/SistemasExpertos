@@ -1,0 +1,36 @@
+
+***************solucion con mensaje ***********************
+(deffunction numprimo(?numero ?divisor)
+(if (< (/ ?numero 2) ?divisor)then
+(printout t "Es numero primo" )
+else
+(if (= (mod ?numero ?divisor) 0)then
+(printout t "No Es numero primo" )
+else
+(return (numprimo ?numero (+ ?divisor 1)))
+)
+)
+)
+(printout t "" (numprimo 13 2) crlf)
+
+*******************fibonacci*************************************
+****funcion para sumar*********
+
+(deffunction fibb(?n)
+(if (or (= ?n 0) (= ?n 1))then
+?n
+else
+(+ (fibb(- ?n 1)) (fibb(- ?n 2)))
+)
+)
+
+******funcion para imprimir ********
+
+(deffunction calcfibb(?n)
+(bind ?cont 0)
+(while (< ?cont ?n)do
+(printout t (fibb ?cont) crlf)
+(bind ?cont (+ ?cont 1))
+)
+)
+
